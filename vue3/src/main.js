@@ -4,11 +4,11 @@ import App from './App.vue'
 createApp(App).mount('#app')
 
 
-let instance = null;
+//let instance = null;
 
 function render(props={}){
   const { container } = props;
-  instance=createApp(App).mount(container ? container.querySelector('#app') : '#app') 
+  createApp(App).mount(container ? container.querySelector('#app') : '#app') 
 }
 
 
@@ -20,9 +20,9 @@ export async function mount(props) {
   render(props);
 } 
 export async function unmount() {
-  instance.$destroy();
-  instance.$el.innerHTML = '';
-  instance = null; 
+  // instance.$destroy();
+  // instance.$el.innerHTML = '';
+  // instance = null; 
 } 
 // 独立运行时
 if (!window.__POWERED_BY_QIANKUN__) {

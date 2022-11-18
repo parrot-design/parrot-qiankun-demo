@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { registerMicroApps,start } from "qiankun";
+import { registerMicroApps,start } from "./qiankun";
 import './index.css';
 import App from './App'; 
 
@@ -26,8 +26,7 @@ registerMicroApps([
         activeRule:'/vue3'
     }
 ]);
-
-start();
+ 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -35,3 +34,6 @@ root.render(
     <App /> 
 );
  
+setTimeout(()=>{
+    start();
+},100)
